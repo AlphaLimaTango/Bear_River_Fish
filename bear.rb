@@ -1,5 +1,5 @@
 class Bear
-  attr_reader :name, :type, :stomach_state
+  attr_reader :name, :type 
 
   def initialize(name, type)
     @name = name
@@ -19,5 +19,12 @@ class Bear
     return "Roar!"
   end
 
-
+  # def eat_fish(fish)
+  #   @stomach_state << fish
+  # end
+  #
+  # def go_fishing(river)
+  #   that_fish = river.lose_fish()
+  #   eat_fish(that_fish)
+  # end
 end
