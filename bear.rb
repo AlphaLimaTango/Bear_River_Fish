@@ -11,20 +11,12 @@ class Bear
     @stomach_state.count
   end
 
-  def go_fishing(fish)
-    @stomach_state << fish
+  def go_fishing(river)
+    @stomach_state << river.lose_fish()
   end
 
   def do_the_roar
     return "Roar!"
-  end
-
-  def is_fish_defo_in_belly(fish_name)
-    for fish in @stomach_state
-      if fish == fish_name
-        return "I just ate #{fish_name}! Yum."
-      end
-    end
   end
 
 

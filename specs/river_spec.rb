@@ -6,12 +6,16 @@ require_relative('../fish')
 class TestRiver < MiniTest::Test
 
   def setup
-    @river = River.new("Nile", [@fish1, @fish2, @fish3])#why does this not work? I needed to put my fishes in the stock array in river???
+    @river = River.new("Nile")
 
     @fish1 = Fish.new("Iqbal")
     @fish2 = Fish.new("Amal")
     @fish3 = Fish.new("Bilal")
     @fish4 = Fish.new("Hamima")
+
+    @river.add_fish_to_stock(@fish1)
+    @river.add_fish_to_stock(@fish2)
+    @river.add_fish_to_stock(@fish3)
   end
 
   def test_does_river_exist
@@ -27,14 +31,13 @@ class TestRiver < MiniTest::Test
     @river.add_fish_to_stock(@fish4)
     assert_equal(4, @river.count_stock)
   end
-  #
+
   def test_bear_has_stolen_fish_from_stock
 
     assert_equal(3, @river.count_stock)
-    return @river.lose_fish(@fish1)
-    #why did I need return to work??? but it I just wanted to run the function!!
+    fish = @river.lose_fish()
     assert_equal(2, @river.count_stock)
   end
-  #
+
 
 end
